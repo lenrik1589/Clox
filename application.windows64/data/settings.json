@@ -1,0 +1,14 @@
+{
+  "Height": 720,
+  "clockIndex": 3,
+  "usedDebugOverlays": [
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "Width": 1280,
+  "drawSecondsHand": true,
+  "fullScreen": false
+}
