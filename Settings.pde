@@ -30,10 +30,7 @@ class Settings {
     } else {
       using = currentSettings;
     }
-    if (using.getBoolean("fullScreen"))
-      fullScreen();
-    else
-      surface.setSize(using.getInt("Width"), using.getInt("Height"));
+    surface.setSize(max(using.getInt("Width"), 300), max(using.getInt("Height"), 300));
     clockIndex = using.getInt("clockIndex");
     usedDebugOverlays = using.getJSONArray("usedDebugOverlays").getBooleanArray();
     useDebug.setSelected(usedDebugOverlays[0]);
