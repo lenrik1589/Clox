@@ -22,7 +22,6 @@ Button[] buttons = new Button[4];
 
 
 void setup() {
-	println(displayWidth, displayHeight);
 	frameRate(-1);
 
 	prepareExitHandler();
@@ -119,16 +118,13 @@ void draw() {
 	mon = cdr.get(Calendar.MONTH)+1;
 	year = cdr.get(Calendar.YEAR);
 	int maxd = mon==2?year%4==0?29:28:mon<8?30+mon%2:31-mon%2;
-	float st = 0, mt = 0, ht = 0, dt = 0, mot = 0, yt = 0;
-	if (clockIndex==3||clockIndex==0)
-	{
-		st = sec + ms / 1000.0; 
-		mt = min + norm(st, 0, 60); 
-		ht = hr + norm(mt, 0, 60); 
-		dt = day + norm(ht, 0, 24); 
-		mot = mon + norm(dt, 1, maxd+1); 
+	float st = sec + ms / 1000.0, 
+		mt = min + norm(st, 0, 60), 
+		ht = hr + norm(mt, 0, 60), 
+		dt = day + norm(ht, 0, 24), 
+		mot = mon + norm(dt, 1, maxd+1), 
 		yt = year + norm(mot, 1, 13);
-	}
+	
 
 
 
@@ -976,12 +972,10 @@ void odigit(float x, float y, float z, float w, int digit) {
 		translate(w * z * 2.5, -w * z * 2.5);
 		beginShape(QUADS);
 		long mask = _5x7digits[digit];
-		for (int i = 0; i < 7; i++){
-			for (int j = 0; j < 5; j++){
+		for (int i = 0; i < 7; i++)
+			for (int j = 0; j < 5; j++)
 				if ((mask>>(34-i*5-j)&1)==1)
 				oquad(x+w*j,y+w*i,z,w,w);
-			}
-		}
 		endShape();
 	}
 	pop();
