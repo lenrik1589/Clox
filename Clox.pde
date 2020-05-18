@@ -126,8 +126,6 @@ void draw() {
 		yt = year + norm(mot, 1, 13);
 	
 
-
-
 	switch(clockIndex) {
 	case 0:
 		gen(bri);
