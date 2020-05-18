@@ -1,8 +1,8 @@
 {
   "Height": 720,
-  "clockIndex": 0,
+  "clockIndex": 5,
   "usedDebugOverlays": [
-    false,
+    true,
     true,
     false,
     false,
